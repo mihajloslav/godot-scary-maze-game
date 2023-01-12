@@ -13,7 +13,10 @@ onready var level3_collision : Node2D = $Level3/Collision
 onready var picture : Control = $Picture
 onready var timer : Timer = $Timer
 onready var buttons : Control = $Picture/Buttons
-onready var picture_label : Label = $Picture/PictureLabel
+onready var picture_label_control : Control = $Picture/PictureLabelControl
+onready var picture_label_end : Control = $Picture/PictureLabelEnd
+onready var picture_sprite : Sprite = $Picture/Sprite
+onready var picture_label_control_position : Vector2 = picture_label_control.rect_position
 var level : int = 0
 var label_start : bool = false
 #---------------------------------------------------------------------------------------------------
@@ -22,9 +25,10 @@ func _ready() -> void:
 #---------------------------------------------------------------------------------------------------
 func _physics_process(_delta : float) -> void:
 	if label_start:
-		picture_label.visible = true
-		picture_label.rect_position = lerp(picture_label.rect_position, Vector2(picture_label.rect_position.x,652), 0.05)
-	if picture_label.rect_position.y >= 650:
+		picture_label_control.visible = true
+		print(picture_label_control.rect_position)
+		picture_label_control.rect_position = lerp(picture_label_control.rect_position, Vector2(picture_label_control.rect_position.x,picture_label_end.rect_position.y), 0.05)
+	if picture_label_control.rect_position.y >= picture_label_end.rect_position.y - 2:
 		label_start = false
 		buttons.visible = true
 #---------------------------------------------------------------------------------------------------
@@ -44,8 +48,8 @@ func change_visible(current_level : int) -> void:
 	print(Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) if level == 0 or level == 1 or level == 5 else Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN))
 	if level != 5:
 		buttons.visible = false
-		picture_label.visible = false
-		picture_label.rect_position = Vector2(571.5, 353)
+		picture_label_control.visible = false
+		picture_label_control.rect_position = picture_label_control_position
 		label_start = false
 	play.visible = level == VISIBLE.PLAY
 	menu.visible = level == VISIBLE.MENU
@@ -61,11 +65,11 @@ func open_website(site_number : int) -> void:
 		2:print(OS.shell_open("https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&text=&url=https%3A%2F%2Fgithub.com%2Fmikikupus%2Fgodot-scary-maze-game"))
 #---------------------------------------------------------------------------------------------------
 func _on_Maze_resized() -> void:
-	if level1_collision != null:
-		level1_collision.scale = OS.get_window_size() / Vector2(1280,720)
-	if level2_collision != null:
-		level2_collision.scale = OS.get_window_size() / Vector2(1280,720)
-	if level3_collision != null:
-		level3_collision.scale = OS.get_window_size() / Vector2(1280,720)
+	if level1_collision != null: level1_collision.scale = OS.get_window_size() / Vector2(1280,720)
+	if level2_collision != null: level2_collision.scale = OS.get_window_size() / Vector2(1280,720)
+	if level3_collision != null: level3_collision.scale = OS.get_window_size() / Vector2(1280,720)
+	if picture_sprite != null: 
+		picture_sprite.scale = picture_sprite.scale * (OS.get_window_size() / Vector2(1280,720))
+		picture_sprite.position = picture_sprite.position * (OS.get_window_size() / Vector2(1280,720))
 	$Dot.scale = OS.get_window_size() / Vector2(1280,720)
 #---------------------------------------------------------------------------------------------------
