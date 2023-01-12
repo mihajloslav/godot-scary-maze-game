@@ -24,13 +24,15 @@ func _ready() -> void:
 	change_visible(level)
 #---------------------------------------------------------------------------------------------------
 func _physics_process(_delta : float) -> void:
-	if label_start:
-		picture_label_control.visible = true
-		print(picture_label_control.rect_position)
-		picture_label_control.rect_position = lerp(picture_label_control.rect_position, Vector2(picture_label_control.rect_position.x,picture_label_end.rect_position.y), 0.05)
-	if picture_label_control.rect_position.y >= picture_label_end.rect_position.y - 2:
-		label_start = false
-		buttons.visible = true
+	if level == 5:
+		if label_start:
+			picture_label_control.visible = true
+			print(picture_label_control.rect_position)
+			picture_label_control.rect_position = lerp(picture_label_control.rect_position, Vector2(picture_label_control.rect_position.x,picture_label_end.rect_position.y), 0.05)
+		if picture_label_control.rect_position.y >= picture_label_end.rect_position.y - 2:
+			label_start = false
+			picture_label_control.rect_position = Vector2(picture_label_control.rect_position.x,picture_label_end.rect_position.y +2)
+			buttons.visible = true
 #---------------------------------------------------------------------------------------------------
 func _on_LevelArea_body_entered(_body : Node, current_level : int) -> void:
 	if level == current_level: change_visible(1)
