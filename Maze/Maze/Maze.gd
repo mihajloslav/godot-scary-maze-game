@@ -33,6 +33,7 @@ var label_start : bool = false
 #---------------------------------------------------------------------------------------------------
 func _ready() -> void:
 	_change_visible(level)
+	_on_Maze_resized()
 #---------------------------------------------------------------------------------------------------
 func _input(_event : InputEvent) -> void:
 	dot.position = get_viewport().get_mouse_position()
