@@ -79,6 +79,7 @@ func _open_website(site_number : int) -> void:
 		0: print(OS.shell_open("https://github.com/mikikupus/godot-scary-maze-game"))
 		1: print(OS.shell_open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fmikikupus%2Fgodot-scary-maze-game&amp;src=sdkpreparse"))
 		2: print(OS.shell_open("https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&text=&url=https%3A%2F%2Fgithub.com%2Fmikikupus%2Fgodot-scary-maze-game"))
+		3: print("mailto:onlymihajlo@gmail.com")
 #---------------------------------------------------------------------------------------------------
 func _on_Maze_resized() -> void:
 	if level1_collision != null: level1_collision.scale = OS.get_window_size() / Vector2(1280,720)
