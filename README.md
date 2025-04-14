@@ -40,7 +40,7 @@ git clone https://github.com/mihajloslav/godot-scary-maze-game.git
 
 ## 🔍 Preview
 
-_(Feel free to add a screenshot or GIF of the game in action here)_
+_(coming soon...)_
 
 ---
 
@@ -48,8 +48,6 @@ _(Feel free to add a screenshot or GIF of the game in action here)_
 
 - 😱 Add a jumpscare like the original
 - 📻 Include creepy sound effects
-- 🌟 Add more maze levels
-- 🧠 VR version? 😯
 
 ---
 
