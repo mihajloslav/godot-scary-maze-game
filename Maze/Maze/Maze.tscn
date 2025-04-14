@@ -505,7 +505,7 @@ layout_mode = 2
 [node name="TheMaze" type="Label" parent="Menu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "The Maze^TM (v1.1)
+text = "The Maze™ (v1.1)
 "
 horizontal_alignment = 1
 
@@ -565,9 +565,9 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_6oyrj")
 theme_override_font_sizes/font_size = 12
 text = "IMPORTANT!!!
-This is fan-made recreation of original \"The Maze^TM (v1.1)\" by Jeremy Winterrowd.
-This is just a template made in Godot Game Engine.
-This game doesn't have jumpscare or sound effects. (if it is original game from the source below)
+This is a fan-made recreation of The Maze™ (v1.1) by Jeremy Winterrowd.
+Made as a template in the Godot Engine.
+No jumpscares or sound effects are included.
 Source code: https://github.com/mihajloslav/godot-scary-maze-game
 Contact: onlymihajlo@gmail.com"
 horizontal_alignment = 1
@@ -856,35 +856,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Play" type="Button" parent="Play/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Play/CenterContainer"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = -43.0
-offset_right = 22.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(10, 10)
-theme_override_colors/font_hover_color = Color(0.937255, 0.54902, 0, 1)
-theme_override_colors/font_color = Color(0.92549, 0.870588, 0.0666667, 1)
-theme_override_colors/font_focus_color = Color(0.92549, 0.870588, 0.0666667, 1)
-theme_override_colors/font_pressed_color = Color(0.92549, 0.870588, 0.0666667, 1)
-theme_override_fonts/font = SubResource("SystemFont_15p2h")
-theme_override_font_sizes/font_size = 40
-text = ">"
-icon_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Play/CenterContainer"]
-layout_mode = 2
-offset_left = 523.0
-offset_top = 380.0
-offset_right = 757.0
-offset_bottom = 483.0
 alignment = 1
 
 [node name="PlayLabel" type="Label" parent="Play/CenterContainer/VBoxContainer"]
@@ -909,6 +888,29 @@ text = "(The site no longer exists!)
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Play" type="Button" parent="Play/CenterContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -43.0
+offset_right = 22.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 10)
+theme_override_colors/font_hover_color = Color(0.937255, 0.54902, 0, 1)
+theme_override_colors/font_color = Color(0.92549, 0.870588, 0.0666667, 1)
+theme_override_colors/font_focus_color = Color(0.92549, 0.870588, 0.0666667, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.870588, 0.0666667, 1)
+theme_override_fonts/font = SubResource("SystemFont_15p2h")
+theme_override_font_sizes/font_size = 40
+text = ">"
+icon_alignment = 1
 
 [node name="ImportantRect" type="ColorRect" parent="Play"]
 layout_mode = 1
@@ -938,9 +940,9 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_6oyrj")
 theme_override_font_sizes/font_size = 12
 text = "IMPORTANT!!!
-This is fan-made recreation of original \"The Maze^TM (v1.1)\" by Jeremy Winterrowd.
-This is just a template made in Godot Game Engine.
-This game doesn't have jumpscare or sound effects. (if it is original game from the source below)
+This is a fan-made recreation of The Maze™ (v1.1) by Jeremy Winterrowd.
+Made as a template in the Godot Engine.
+No jumpscares or sound effects are included.
 Source code: https://github.com/mihajloslav/godot-scary-maze-game
 Contact: onlymihajlo@gmail.com"
 horizontal_alignment = 1
