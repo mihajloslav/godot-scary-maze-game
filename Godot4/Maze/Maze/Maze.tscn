@@ -1,0 +1,983 @@
+[gd_scene load_steps=10 format=3 uid="uid://couvsmrhd00mb"]
+
+[ext_resource type="Script" uid="uid://d4hfa08rx0hud" path="res://Maze/Maze.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dulj0nra6ve0k" path="res://Other/icon.svg" id="2_15p2h"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(106, 69)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(108, 69)
+
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(12, 12)
+
+[sub_resource type="SystemFont" id="SystemFont_6oyrj"]
+
+[sub_resource type="Shader" id="4"]
+code = "shader_type canvas_item;"
+
+[sub_resource type="ShaderMaterial" id="5"]
+shader = SubResource("4")
+
+[sub_resource type="SystemFont" id="SystemFont_15p2h"]
+
+[node name="Maze" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Level1" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Collision" type="Node2D" parent="Level1"]
+
+[node name="Level1Area" type="Area2D" parent="Level1/Collision"]
+
+[node name="Level1Collision" type="CollisionPolygon2D" parent="Level1/Collision/Level1Area"]
+polygon = PackedVector2Array(0, -1, 1281, 0, 1280, 720, 763, 721, 763, 101, 1165, 101, 1165, 32, 465, 32, 464, 715, 763, 715, 763, 721, 0, 722)
+
+[node name="RedLevel1Area" type="Area2D" parent="Level1/Collision"]
+
+[node name="RedLevel1Collision" type="CollisionShape2D" parent="Level1/Collision/RedLevel1Area"]
+position = Vector2(1112, 66.5)
+shape = SubResource("1")
+
+[node name="Level" type="Control" parent="Level1"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Cyan1" type="ColorRect" parent="Level1/Level"]
+layout_mode = 0
+anchor_left = 0.363
+anchor_top = 0.044
+anchor_right = 0.596
+anchor_bottom = 0.993
+offset_left = 0.359985
+offset_top = 0.319996
+offset_right = 0.119995
+offset_bottom = 0.039978
+pivot_offset = Vector2(-776, -125)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan2" type="ColorRect" parent="Level1/Level"]
+layout_mode = 0
+anchor_left = 0.573
+anchor_top = 0.044
+anchor_right = 0.836
+anchor_bottom = 0.14
+offset_left = 0.559998
+offset_top = 0.32
+offset_right = -0.0800781
+offset_bottom = 0.199997
+pivot_offset = Vector2(-776, -125)
+color = Color(0, 1, 1, 1)
+
+[node name="Red" type="ColorRect" parent="Level1/Level"]
+layout_mode = 0
+anchor_left = 0.83
+anchor_top = 0.044
+anchor_right = 0.915
+anchor_bottom = 0.14
+offset_left = 0.599976
+offset_top = 0.319998
+offset_right = -0.200073
+offset_bottom = 0.199997
+pivot_offset = Vector2(-776, -125)
+color = Color(1, 0, 0, 1)
+
+[node name="Level1Label" type="Label" parent="Level1/Level/Red"]
+layout_mode = 0
+anchor_left = 0.283
+anchor_top = 1.145
+anchor_right = 0.698
+anchor_bottom = 1.362
+offset_left = 0.00199699
+offset_top = -0.00500488
+offset_right = 0.012001
+offset_bottom = 0.0219955
+text = "Level1"
+
+[node name="Level2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Collision" type="Node2D" parent="Level2"]
+
+[node name="Level2Area" type="Area2D" parent="Level2/Collision"]
+
+[node name="Level2Collision" type="CollisionPolygon2D" parent="Level2/Collision/Level2Area"]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1281, 720, 0, 720, 0, 687, 1171, 687, 1171, 450, 267, 450, 267, 374, 1171, 374, 1171, 164, 266, 164, 266, 100, 1171, 100, 1171, 31, 159, 31, 159, 233, 1063, 233, 1063, 305, 159, 305, 159, 519, 1063, 519, 1063, 618, 159, 618, 159, 687, 0, 687)
+
+[node name="RedLevel2Area" type="Area2D" parent="Level2/Collision"]
+
+[node name="RedLevel2Collision" type="CollisionShape2D" parent="Level2/Collision/RedLevel2Area"]
+position = Vector2(213, 652.5)
+shape = SubResource("2")
+
+[node name="Level" type="Control" parent="Level2"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Cyan1" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.043
+anchor_right = 0.915
+anchor_bottom = 0.139
+offset_left = 0.279999
+offset_top = 0.039999
+offset_right = -0.200073
+offset_bottom = -0.0800095
+pivot_offset = Vector2(-458, 35)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan2" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.093
+anchor_right = 0.209
+anchor_bottom = 0.278
+offset_left = 0.279999
+offset_top = 0.0400009
+offset_right = -0.52002
+offset_bottom = -0.160019
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan3" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.228
+anchor_right = 0.915
+anchor_bottom = 0.324
+offset_left = 0.279999
+offset_top = -0.160004
+offset_right = -0.200073
+offset_bottom = -0.279999
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan4" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.83
+anchor_top = 0.278
+anchor_right = 0.915
+anchor_bottom = 0.471
+offset_left = 0.599976
+offset_top = -0.160019
+offset_right = -0.200073
+offset_bottom = -0.120026
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan5" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.424
+anchor_right = 0.915
+anchor_bottom = 0.519
+offset_left = 0.279999
+offset_top = -0.279999
+offset_right = -0.200073
+offset_bottom = 0.319946
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan6" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.471
+anchor_right = 0.209
+anchor_bottom = 0.674
+offset_left = 0.279999
+offset_top = -0.120026
+offset_right = -0.52002
+offset_bottom = -0.280029
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan7" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.625
+anchor_right = 0.915
+anchor_bottom = 0.721
+offset_left = 0.279999
+offset_right = -0.200073
+offset_bottom = -0.119995
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan8" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.83
+anchor_top = 0.674
+anchor_right = 0.915
+anchor_bottom = 0.897
+offset_left = 0.599976
+offset_top = -0.280029
+offset_right = -0.200073
+offset_bottom = 0.159973
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan9" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.858
+anchor_right = 0.915
+anchor_bottom = 0.954
+offset_left = 0.279999
+offset_top = 0.23999
+offset_right = -0.200073
+offset_bottom = 0.119934
+pivot_offset = Vector2(248, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Red" type="ColorRect" parent="Level2/Level"]
+layout_mode = 0
+anchor_left = 0.124
+anchor_top = 0.858
+anchor_right = 0.209
+anchor_bottom = 0.954
+offset_left = 0.279999
+offset_top = 0.23999
+offset_right = -0.52002
+offset_bottom = 0.119934
+pivot_offset = Vector2(248, 0)
+color = Color(1, 0, 0, 1)
+
+[node name="Level2Label" type="Label" parent="Level2/Level/Red"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.287
+anchor_top = -0.406
+anchor_right = 0.75
+anchor_bottom = -0.087
+offset_left = 0.00399971
+offset_top = 0.0139999
+offset_bottom = 1.00302
+text = "Level2"
+
+[node name="Level3" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Collision" type="Node2D" parent="Level3"]
+
+[node name="Level3Area" type="Area2D" parent="Level3/Collision"]
+
+[node name="Level3Collision" type="CollisionPolygon2D" parent="Level3/Collision/Level3Area"]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 721, 0, 688, 175, 688, 1120, 688, 1120, 462, 252, 462, 252, 353, 576, 353, 576, 321, 673, 321, 673, 227, 620, 227, 620, 211, 673, 211, 673, 150, 709, 150, 709, 70, 620, 70, 620, 150, 653, 150, 653, 193, 602, 193, 602, 245, 654, 245, 654, 301, 179, 301, 179, 532, 1047, 532, 1047, 618, 175, 618, 175, 688, 0, 688)
+
+[node name="RedLevel3Area" type="Area2D" parent="Level3/Collision"]
+position = Vector2(16, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level3/Collision/RedLevel3Area"]
+position = Vector2(-49, 0)
+polygon = PackedVector2Array(653, 70, 653, 150, 686, 150, 686, 193, 635, 193, 635, 218, 635, 245, 687, 245, 687, 251, 706, 251, 706, 227, 653, 227, 653, 211, 706, 211, 706, 150, 742, 150, 742, 70)
+
+[node name="Level" type="Control" parent="Level3"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Cyan1" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.137
+anchor_top = 0.858
+anchor_right = 0.875
+anchor_bottom = 0.956
+offset_left = -0.360016
+offset_top = 0.23999
+offset_right = -0.000244141
+offset_bottom = -0.320007
+pivot_offset = Vector2(-394, -150)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan2" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.818
+anchor_top = 0.69
+anchor_right = 0.875
+anchor_bottom = 0.903
+offset_left = -0.0400391
+offset_top = 0.199951
+offset_right = -0.00012207
+offset_bottom = -0.160095
+pivot_offset = Vector2(-471, -46)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan3" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.14
+anchor_top = 0.642
+anchor_right = 0.875
+anchor_bottom = 0.739
+offset_left = -0.199997
+offset_top = -0.240021
+offset_right = -0.00012207
+offset_bottom = -0.0800171
+pivot_offset = Vector2(470.5, 35)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan4" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.14
+anchor_top = 0.454
+anchor_right = 0.197
+anchor_bottom = 0.699
+offset_left = -0.199997
+offset_top = 0.119995
+offset_right = -0.160004
+offset_bottom = -0.280029
+pivot_offset = Vector2(36.5, 81)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan5" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.14
+anchor_top = 0.418
+anchor_right = 0.45
+anchor_bottom = 0.49
+offset_left = -0.199997
+offset_top = 0.039978
+offset_bottom = 0.199982
+pivot_offset = Vector2(163, 26)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan6" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.437
+anchor_top = 0.418
+anchor_right = 0.526
+anchor_bottom = 0.446
+offset_left = 0.640015
+offset_top = 0.039978
+offset_right = -0.280029
+offset_bottom = -0.119995
+pivot_offset = Vector2(369, 35)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan7" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.511
+anchor_top = 0.328
+anchor_right = 0.526
+anchor_bottom = 0.431
+offset_left = -0.0800781
+offset_top = -0.160004
+offset_right = -0.280029
+offset_bottom = -0.320007
+pivot_offset = Vector2(369, 35)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan8" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.47
+anchor_top = 0.315
+anchor_right = 0.526
+anchor_bottom = 0.34
+offset_left = 0.399963
+offset_top = 0.199982
+offset_right = -0.280029
+offset_bottom = 0.199997
+pivot_offset = Vector2(34, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan9" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.47
+anchor_top = 0.281
+anchor_right = 0.484
+anchor_bottom = 0.328
+offset_left = 0.399963
+offset_top = -0.320007
+offset_right = 0.47998
+offset_bottom = -0.160004
+pivot_offset = Vector2(369, 35)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan10" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.47
+anchor_top = 0.268
+anchor_right = 0.526
+anchor_bottom = 0.293
+offset_left = 0.399963
+offset_top = 0.0399933
+offset_right = -0.280029
+offset_bottom = 0.0399933
+pivot_offset = Vector2(34, 0)
+color = Color(0, 1, 1, 1)
+
+[node name="Cyan11" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.51
+anchor_top = 0.194
+anchor_right = 0.527
+anchor_bottom = 0.281
+offset_left = 0.199951
+offset_top = 0.319992
+offset_right = -1.56
+offset_bottom = -0.320023
+pivot_offset = Vector2(10, 31)
+color = Color(0, 1, 1, 1)
+
+[node name="Red" type="ColorRect" parent="Level3/Level"]
+layout_mode = 0
+anchor_left = 0.484
+anchor_top = 0.097
+anchor_right = 0.554
+anchor_bottom = 0.208
+offset_left = 0.47998
+offset_top = 0.159996
+offset_right = -0.119995
+offset_bottom = 0.23999
+pivot_offset = Vector2(-459, 86)
+color = Color(1, 0.164706, 0, 1)
+
+[node name="Level3Label" type="Label" parent="Level3/Level/Red"]
+layout_mode = 0
+anchor_left = 1.157
+anchor_top = 0.412
+anchor_right = 1.663
+anchor_bottom = 0.587
+offset_left = 0.0269928
+offset_top = 0.0399971
+offset_right = -0.00700378
+offset_bottom = 0.0400009
+text = "Level3"
+
+[node name="Dot" type="CharacterBody2D" parent="."]
+position = Vector2(640, 550)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dot"]
+shape = SubResource("6")
+
+[node name="ColorRect" type="ColorRect" parent="Dot"]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0, 0.227451, 1, 1)
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MenuColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 1, 1, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterContainer"]
+layout_mode = 2
+
+[node name="TheMaze" type="Label" parent="Menu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "The Maze^TM (v1.1)
+"
+horizontal_alignment = 1
+
+[node name="Test" type="Label" parent="Menu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Test your skills!
+Try to reach the goal without touching the walls
+How steady is your hand?
+Let's find out! Try and beat all four levels!
+"
+horizontal_alignment = 1
+
+[node name="Sound" type="Label" parent="Menu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "sound effects will help"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="Menu"]
+layout_mode = 0
+anchor_left = 0.452
+anchor_top = 0.728
+anchor_right = 0.548
+anchor_bottom = 0.818
+offset_left = -0.560059
+offset_top = -0.160034
+offset_right = 0.559937
+offset_bottom = 0.039978
+text = "Play"
+
+[node name="ImportantRect" type="ColorRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_right = 0.999
+anchor_bottom = 0.224
+offset_left = -0.600037
+offset_top = 13.0
+offset_right = -13.72
+offset_bottom = 31.72
+mouse_filter = 2
+color = Color(1, 1, 1, 0.65098)
+
+[node name="Important" type="Label" parent="Menu/ImportantRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021
+anchor_top = 0.095
+anchor_right = 1.022
+anchor_bottom = 0.764
+offset_left = 12.272
+offset_top = -14.06
+offset_right = -12.9039
+offset_bottom = 3.928
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_6oyrj")
+theme_override_font_sizes/font_size = 12
+text = "IMPORTANT!!!
+This is fan-made recreation of original \"The Maze^TM (v1.1)\" by Jeremy Winterrowd.
+This is just a template made in Godot Game Engine.
+This game doesn't have jumpscare or sound effects. (if it is original game from the source below)
+Source code: https://github.com/mihajloslav/godot-scary-maze-game
+Contact: onlymihajlo@gmail.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SourceCode" type="Button" parent="Menu/ImportantRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.8
+anchor_right = 0.593
+anchor_bottom = 0.97
+offset_left = -0.176025
+offset_right = 0.223938
+offset_bottom = 0.399994
+text = "Source Code"
+
+[node name="MenuBack" type="Button" parent="Menu/ImportantRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.811
+anchor_right = 0.16
+anchor_bottom = 0.946
+offset_left = -0.112001
+offset_top = -2.98
+offset_right = -0.120033
+offset_bottom = 3.72
+text = "Back"
+
+[node name="Picture" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Picture"]
+self_modulate = Color(0.529067, 0.529067, 0.529067, 1)
+material = SubResource("5")
+position = Vector2(641.5, 361.5)
+scale = Vector2(11.7422, 6.24219)
+texture = ExtResource("2_15p2h")
+
+[node name="PictureLabelEnd" type="Control" parent="Picture"]
+anchors_preset = 0
+anchor_left = 0.446
+anchor_top = 0.376
+anchor_right = 0.462
+anchor_bottom = 0.404
+offset_left = 0.619995
+offset_top = 0.279999
+offset_right = 0.140015
+offset_bottom = 0.119995
+pivot_offset = Vector2(10, 10)
+
+[node name="PictureLabelControl" type="Control" parent="Picture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+
+[node name="WarningLabel" type="Label" parent="Picture/PictureLabelControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.555
+anchor_right = 0.5
+anchor_bottom = 0.555
+offset_left = -96.0
+offset_top = 10.4
+offset_right = 138.0
+offset_bottom = 37.4
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(96.5, 15.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "(The site no longer exists! Don't visit!)"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PictureLabel" type="Label" parent="Picture/PictureLabelControl"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -7.0
+offset_right = 68.5
+offset_bottom = 7.0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(68.5, 7)
+text = "www.winterrowd.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="Picture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PictureButtons" type="VBoxContainer" parent="Picture/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.732
+anchor_top = 0.643
+anchor_right = 0.851
+anchor_bottom = 0.761
+offset_left = 12.04
+offset_top = 0.0400085
+offset_right = -0.280029
+offset_bottom = 0.0800171
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Replay" type="Button" parent="Picture/Buttons/PictureButtons"]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+text = "Replay?"
+
+[node name="SourceCode" type="Button" parent="Picture/Buttons/PictureButtons"]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Source Code"
+
+[node name="Email" type="Button" parent="Picture/Buttons"]
+layout_mode = 0
+anchor_top = 0.903
+anchor_right = 0.109
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = -0.160095
+offset_right = -0.520004
+offset_bottom = -17.0001
+text = "Email Jeremy"
+
+[node name="Left" type="Label" parent="Picture/Buttons/Email"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.463
+anchor_top = -0.302
+anchor_right = 1.193
+anchor_bottom = 1.0
+offset_left = 32.467
+offset_top = 0.00600052
+offset_right = -0.0370026
+offset_bottom = -55.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "(my email)"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Visit" type="Button" parent="Picture/Buttons"]
+layout_mode = 0
+anchor_left = 0.89
+anchor_top = 0.903
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.200073
+offset_top = -0.160095
+offset_right = -44.0
+offset_bottom = -17.0001
+text = "Visit Website"
+
+[node name="Right" type="Label" parent="Picture/Buttons/Visit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.176
+anchor_top = -0.34
+anchor_right = 1.443
+anchor_bottom = 1.0
+offset_left = 0.00800133
+offset_top = 2.02
+offset_right = -31.844
+offset_bottom = -55.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "(Source code link)"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ShareControl" type="Control" parent="Picture/Buttons"]
+anchors_preset = 0
+anchor_left = 0.773
+anchor_right = 1.0
+anchor_bottom = 0.212
+offset_left = -0.440063
+offset_bottom = -2.64001
+
+[node name="ShareButtons" type="HBoxContainer" parent="Picture/Buttons/ShareControl"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+anchor_left = 0.488
+anchor_top = 0.407
+anchor_right = 0.849
+anchor_bottom = 0.74
+offset_left = -0.00801086
+offset_top = -0.0499954
+offset_right = -0.059021
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="FBButton" type="Button" parent="Picture/Buttons/ShareControl/ShareButtons"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "FB"
+
+[node name="XButton" type="Button" parent="Picture/Buttons/ShareControl/ShareButtons"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "X"
+
+[node name="ShareLabel" type="Label" parent="Picture/Buttons/ShareControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.031
+anchor_top = 0.073
+anchor_right = 0.952
+anchor_bottom = 0.38
+offset_left = 0.0210667
+offset_top = 0.0500002
+offset_right = -143.032
+offset_bottom = -23.0
+scale = Vector2(2, 2)
+text = "click icon to share!"
+horizontal_alignment = 1
+
+[node name="TextLabel" type="Label" parent="Picture/Buttons"]
+layout_mode = 0
+anchor_right = 0.021
+anchor_bottom = 0.022
+offset_left = 27.0
+offset_top = 17.0
+offset_right = 420.12
+offset_bottom = 15.16
+scale = Vector2(1.5, 1.5)
+text = "TM & © 2004 Warner Bros. Entertainment Inc. All rights reserved."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarningLabel" type="Label" parent="Picture/Buttons/TextLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.043
+anchor_top = -0.81
+anchor_right = 0.868
+anchor_bottom = 1.594
+offset_left = 75.543
+offset_top = 41.2967
+offset_right = 0.131989
+offset_bottom = 0.00466156
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "(this is in the original game so i added it!)"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Play" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlayColorRect" type="ColorRect" parent="Play"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 1, 1, 1)
+
+[node name="CenterContainer" type="Control" parent="Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Play/CenterContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -43.0
+offset_right = 22.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 10)
+theme_override_colors/font_hover_color = Color(0.937255, 0.54902, 0, 1)
+theme_override_colors/font_color = Color(0.92549, 0.870588, 0.0666667, 1)
+theme_override_colors/font_focus_color = Color(0.92549, 0.870588, 0.0666667, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.870588, 0.0666667, 1)
+theme_override_fonts/font = SubResource("SystemFont_15p2h")
+theme_override_font_sizes/font_size = 40
+text = ">"
+icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Play/CenterContainer"]
+layout_mode = 2
+offset_left = 523.0
+offset_top = 380.0
+offset_right = 757.0
+offset_bottom = 483.0
+alignment = 1
+
+[node name="PlayLabel" type="Label" parent="Play/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Play the Maze!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinkLabel" type="Label" parent="Play/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "© winterrowd.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarningLabel" type="Label" parent="Play/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "(The site no longer exists!)
+(Don't visit!)"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ImportantRect" type="ColorRect" parent="Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_right = 0.999
+anchor_bottom = 0.224
+offset_left = -0.600037
+offset_top = 13.0
+offset_right = -13.72
+offset_bottom = 31.72
+mouse_filter = 2
+color = Color(1, 1, 1, 0.65098)
+
+[node name="Important" type="Label" parent="Play/ImportantRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021
+anchor_top = 0.095
+anchor_right = 1.022
+anchor_bottom = 0.764
+offset_left = 12.272
+offset_top = -14.06
+offset_right = -12.9039
+offset_bottom = 3.928
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_6oyrj")
+theme_override_font_sizes/font_size = 12
+text = "IMPORTANT!!!
+This is fan-made recreation of original \"The Maze^TM (v1.1)\" by Jeremy Winterrowd.
+This is just a template made in Godot Game Engine.
+This game doesn't have jumpscare or sound effects. (if it is original game from the source below)
+Source code: https://github.com/mihajloslav/godot-scary-maze-game
+Contact: onlymihajlo@gmail.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SourceCode" type="Button" parent="Play/ImportantRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.8
+anchor_right = 0.593
+anchor_bottom = 0.97
+offset_left = -0.176025
+offset_right = 0.223938
+offset_bottom = 0.399994
+text = "Source Code"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="resized" from="." to="." method="_on_Maze_resized"]
+[connection signal="body_entered" from="Level1/Collision/Level1Area" to="." method="_on_LevelArea_body_entered" binds= [2]]
+[connection signal="body_entered" from="Level1/Collision/RedLevel1Area" to="." method="_on_RedArea_body_entered" binds= [2]]
+[connection signal="body_entered" from="Level2/Collision/Level2Area" to="." method="_on_LevelArea_body_entered" binds= [3]]
+[connection signal="body_entered" from="Level2/Collision/RedLevel2Area" to="." method="_on_RedArea_body_entered" binds= [3]]
+[connection signal="body_entered" from="Level3/Collision/Level3Area" to="." method="_on_LevelArea_body_entered" binds= [4]]
+[connection signal="body_entered" from="Level3/Collision/RedLevel3Area" to="." method="_on_RedArea_body_entered" binds= [4]]
+[connection signal="pressed" from="Menu/Play" to="." method="_change_visible" binds= [2]]
+[connection signal="pressed" from="Menu/ImportantRect/SourceCode" to="." method="_open_website" binds= [0]]
+[connection signal="pressed" from="Menu/ImportantRect/MenuBack" to="." method="_change_visible" binds= [0]]
+[connection signal="pressed" from="Picture/Buttons/PictureButtons/Replay" to="." method="_change_visible" binds= [1]]
+[connection signal="pressed" from="Picture/Buttons/PictureButtons/SourceCode" to="." method="_open_website" binds= [0]]
+[connection signal="pressed" from="Picture/Buttons/Email" to="." method="_open_website" binds= [3]]
+[connection signal="pressed" from="Picture/Buttons/Visit" to="." method="_open_website" binds= [0]]
+[connection signal="pressed" from="Picture/Buttons/ShareControl/ShareButtons/FBButton" to="." method="_open_website" binds= [1]]
+[connection signal="pressed" from="Picture/Buttons/ShareControl/ShareButtons/XButton" to="." method="_open_website" binds= [2]]
+[connection signal="pressed" from="Play/CenterContainer/Play" to="." method="_change_visible" binds= [1]]
+[connection signal="pressed" from="Play/ImportantRect/SourceCode" to="." method="_open_website" binds= [0]]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
